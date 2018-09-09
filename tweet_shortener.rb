@@ -17,12 +17,14 @@ end
   * **Hint:** How can you iterate over every word in a tweet and compare it to the hash keys? Convert the tweet into an array to enable this. Then, make sure to convert it back into a string to return the shortened tweet at the end of the method.
   * **Hint:** How can you grab all of the keys of the hash for the purpose of comparing them to the words in the tweet? Use the `.keys` method.
 =end
-
 def word_substituter(long_tweet)
   long_tweet.split.map do |word|
     dictionary.each do |key, value|
-      word = value if word.downcase == key
+      word = value if word.downcase == key #same as word[word.downcase] = value
     end
     word
   end.join(' ')
 end
+
+
+def bulk_tweet_shortener(t)
