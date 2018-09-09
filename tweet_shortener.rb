@@ -20,7 +20,7 @@ end
 def word_substituter(long_tweet)
   long_tweet.split.map do |word|
     dictionary.each do |key, value|
-      word = dictionary[word.downcase] if dictionary.keys.include?(word.downcase) #same as word[word.downcase] = value
+      word = dictionary[word.downcase] if dictionary.keys.include?(word.downcase)
     end
     word
   end.join(' ')
