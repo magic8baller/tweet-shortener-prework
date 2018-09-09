@@ -20,12 +20,11 @@ end
 def word_substituter(long_tweet)
   long_tweet.split.map do |word|
     dictionary.each do |key, value|
-      word = value if word.downcase == key #same as word[word.downcase] = value
+      word = value if dictionary.keys.include?(word.downcase) #same as word[word.downcase] = value
     end
     word
   end.join(' ')
 end
-
 
 def bulk_tweet_shortener(tweets)
 
